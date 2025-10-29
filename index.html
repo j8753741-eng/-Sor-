@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Ma princesse — el amor que viaja contigo</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#e6bf48;
+  --cream:#f5eee8;
+  --violet-a:#6f3f7a;
+  --violet-b:#552a6a;
+  --violet-c:#2f1538;
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#090012;color:var(--cream);font-family:"Playfair Display",serif;}
+body{display:flex;align-items:center;justify-content:center;padding:16px;}
+.intro{
+  position:fixed;inset:0;background:radial-gradient(circle at 30% 30%,rgba(120,60,150,.15),rgba(0,0,0,.95));
+  display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:99;text-align:center;
+}
+.intro h1{font-family:'Great Vibes',cursive;color:var(--gold);font-size:2.8rem;margin-bottom:.3em;}
+.intro p{color:#d8cfc9;margin-bottom:1em;}
+.btn-enter{background:rgba(150,90,200,.25);border:1px solid rgba(255,255,255,.15);border-radius:999px;padding:10px 22px;color:#fff;font-weight:600;cursor:pointer;}
+.btn-enter:hover{background:rgba(150,90,200,.4);}
+
+.wrap{width:100%;max-width:950px;}
+.card{border-radius:var(--radius);overflow:hidden;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);box-shadow:0 0 40px rgba(0,0,0,.5);position:relative;z-index:1;}
+.topmenu{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;position:relative;z-index:20;background:rgba(0,0,0,.4);}
+.title{font-family:'Great Vibes',cursive;color:var(--gold);font-size:1.4rem;}
+.menu{display:flex;gap:10px;}
+.flag{width:50px;height:50px;border-radius:50%;border:2px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:22px;background:rgba(255,255,255,.05);}
+.flag.active{outline:3px solid rgba(200,150,255,.4);}
+.main{padding:24px;position:relative;overflow:hidden;}
+.tint{
+  position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.22;transition:background .4s ease;
+}
+.t-amsterdam{background:linear-gradient(180deg,rgba(111,63,122,.9),rgba(39,15,38,.9));}
+.t-switzerland{background:linear-gradient(180deg,rgba(85,42,106,.9),rgba(22,9,32,.9));}
+.t-norway{background:linear-gradient(180deg,rgba(47,21,56,.9),rgba(8,3,20,.9));}
+.t-surprise{background:linear-gradient(180deg,rgba(6,2,20,.95),rgba(0,0,0,.98));}
+.panel{position:relative;z-index:5;opacity:0;transform:translateY(8px);transition:.4s ease;}
+.panel.show{opacity:1;transform:translateY(0);}
+.country{color:var(--gold);font-weight:700;margin-bottom:8px;}
+.text{line-height:1.6;font-size:1.06rem;text-align:justify;white-space:pre-line;}
+.signature{text-align:right;margin-top:12px;color:var(--gold);font-family:'Great Vibes';}
+.surprise-text{min-height:120px;text-align:center;font-size:1.2rem;}
+.surprise-final{text-align:center;color:var(--gold);font-family:'Great Vibes';font-size:1.4rem;margin-top:10px;}
+#princessName[contenteditable]{outline:none;border-bottom:1px dashed rgba(255,255,255,.2);}
+.controls{display:flex;justify-content:center;margin-top:10px;}
+.btn{padding:8px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);color:#fff;cursor:pointer;}
+.hint{text-align:center;color:#d4c9c0;font-size:.9rem;margin-top:10px;}
+@media(max-width:780px){.flag{width:42px;height:42px;font-size:18px;}.main{padding:16px;}}
+</style>
+</head>
+<body>
+<section class="intro" id="intro">
+  <h1>Bienvenida, mi compañera de viaje.</h1>
+  <p>Mi amor.</p>
+  <button class="btn-enter" id="enterBtn">Entrar</button>
+</section>
+
+<div class="wrap">
+  <article class="card">
+    <div class="topmenu">
+      <div class="title">Ma princesse — el amor que viaja contigo</div>
+      <div class="menu">
+        <button class="flag active" data-id="0" title="Ámsterdam">🇳🇱</button>
+        <button class="flag" data-id="1" title="Suiza">🇨🇭</button>
+        <button class="flag" data-id="2" title="Noruega">🇳🇴</button>
+        <button class="flag" data-id="3" title="Sorpresa">✨</button>
+      </div>
+    </div>
+    <div class="main">
+      <div class="tint t-amsterdam" id="tint"></div>
+
+      <section class="panel show" id="p-0">
+        <div class="country">Ámsterdam — Países Bajos</div>
+        <div class="text">
+Caminamos por los canales al atardecer, y el reflejo en el agua lleva tu risa como un faro.
+Si tus pasos te llevan allí, iré contigo entre bicicletas y tulipanes; me perderé contigo, me encontraré en tus manos.
+Quiero que sepas: donde tú estés, mi hogar te sigue.
+        </div>
+        <div class="signature">— Con todo mi amor</div>
+      </section>
+
+      <section class="panel" id="p-1">
+        <div class="country">Suiza — Suiza</div>
+        <div class="text">
+En los lagos claros y las cumbres nevadas imagino construir un refugio para nosotros.
+Te prometo calma y constancia; prometo que mi vida tendrá la sencillez y la belleza de un amanecer alpino a tu lado.
+        </div>
+        <div class="signature">— Con todo mi amor</div>
+      </section>
+
+      <section class="panel" id="p-2">
+        <div class="country">Noruega — Noruega</div>
+        <div class="text">
+Bajo auroras que pintan el cielo, te tomaré la mano y te diré que no hay noche demasiado fría cuando estamos juntos.
+Si sueñas con las luces del norte, yo soñaré contigo bajo ese mismo brillo.
+        </div>
+        <div class="signature">— Con todo mi amor</div>
+      </section>
+
+      <section class="panel" id="p-3">
+        <div class="surprise-text" id="surpriseText"></div>
+        <div class="surprise-final" id="surpriseFinal">
+          Te amo con todo mi corazón, mi princesa <span id="princessName" contenteditable="true">valeria Isabel petro Villazón</span>.
+        </div>
+        <div class="controls"><button class="btn" id="restartBtn">Volver al inicio</button></div>
+      </section>
+    </div>
+    <div class="hint">Toca una bandera arriba para elegir un destino</div>
+  </article>
+</div>
+
+<script>
+const flags=document.querySelectorAll('.flag');
+const panels=document.querySelectorAll('.panel');
+const tint=document.getElementById('tint');
+const intro=document.getElementById('intro');
+document.getElementById('enterBtn').onclick=()=>{intro.style.display='none';show(0);}
+let current=0;
+const tints=['t-amsterdam','t-switzerland','t-norway','t-surprise'];
+
+flags.forEach(f=>f.onclick=()=>{show(+f.dataset.id);});
+
+function show(i){
+  panels.forEach((p,idx)=>p.classList.toggle('show',idx===i));
+  flags.forEach((b,idx)=>b.classList.toggle('active',idx===i));
+  tint.className='tint '+tints[i];
+  current=i;
+  if(i===3) typeWriter();
+}
+
+function typeWriter(){
+  const t=document.getElementById('surpriseText');
+  const f=document.getElementById('surpriseFinal');
+  t.textContent='';
+  f.style.opacity=0;
+  const msg="Y cuando llegues al final de todos nuestros destinos...";
+  let i=0;
+  const speed=40;
+  const timer=setInterval(()=>{
+    if(i<msg.length){t.textContent+=msg.charAt(i);i++;}
+    else{clearInterval(timer);setTimeout(()=>{f.style.opacity=1;},400);}
+  },speed);
+}
+
+document.getElementById('restartBtn').onclick=()=>{intro.style.display='flex';show(0);}
+</script>
+</body>
+  </html>
